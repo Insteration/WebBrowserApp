@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func goButton(_ sender: UIButton) {
-        let myUrl = URL(string: "https://\(textField.text!)")
+        let myUrl = URL(string: "https://\(textField.text ?? "https://google.com")")
         guard let unwrappedUrlRequest = myUrl else { return }
         let request = URLRequest(url: unwrappedUrlRequest)
         webView.loadRequest(request)
