@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qkK-an-VKf">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -45,29 +45,42 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-It-ZoA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter website address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-It-ZoA">
+                                <rect key="frame" x="20" y="44" width="249" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="SVF-mt-k5h"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OSO-vo-Dp2">
-                                <rect key="frame" x="197" y="437" width="20" height="20"/>
+                                <rect key="frame" x="197" y="437.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjp-dG-7Qz">
+                                <rect key="frame" x="286" y="44" width="120" height="30"/>
+                                <state key="normal" title="GO!"/>
+                                <connections>
+                                    <action selector="goButton:" destination="qkK-an-VKf" eventType="touchUpInside" id="ios-zl-HOo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qjp-dG-7Qz" firstAttribute="top" secondItem="Hs0-It-ZoA" secondAttribute="top" id="275-1d-Iyp"/>
+                            <constraint firstItem="oAV-HJ-FQI" firstAttribute="trailing" secondItem="Qjp-dG-7Qz" secondAttribute="trailing" constant="8" id="D28-Sp-Aty"/>
                             <constraint firstItem="Y8J-jE-w7O" firstAttribute="bottom" secondItem="s0x-Xl-1kw" secondAttribute="top" id="DtE-Vr-LRY"/>
                             <constraint firstItem="Y8J-jE-w7O" firstAttribute="leading" secondItem="oAV-HJ-FQI" secondAttribute="leading" id="F2A-Is-lkY"/>
                             <constraint firstItem="OSO-vo-Dp2" firstAttribute="centerY" secondItem="Y8J-jE-w7O" secondAttribute="centerY" id="FYF-Cp-7nH"/>
-                            <constraint firstItem="Hs0-It-ZoA" firstAttribute="trailing" secondItem="oAV-HJ-FQI" secondAttribute="trailing" id="GPx-a9-Ra3"/>
-                            <constraint firstItem="Hs0-It-ZoA" firstAttribute="top" secondItem="oAV-HJ-FQI" secondAttribute="top" id="ZRQ-qU-RW7"/>
+                            <constraint firstItem="Qjp-dG-7Qz" firstAttribute="top" secondItem="oAV-HJ-FQI" secondAttribute="top" id="Z0W-yS-Qok"/>
                             <constraint firstItem="s0x-Xl-1kw" firstAttribute="trailing" secondItem="oAV-HJ-FQI" secondAttribute="trailing" id="eBL-QW-bMH"/>
-                            <constraint firstItem="Y8J-jE-w7O" firstAttribute="top" secondItem="Hs0-It-ZoA" secondAttribute="bottom" constant="8" id="nD6-mx-gSa"/>
+                            <constraint firstItem="Qjp-dG-7Qz" firstAttribute="leading" secondItem="Hs0-It-ZoA" secondAttribute="trailing" constant="17" id="g2r-VD-qLQ"/>
                             <constraint firstItem="s0x-Xl-1kw" firstAttribute="leading" secondItem="oAV-HJ-FQI" secondAttribute="leading" id="rfw-RN-oRK"/>
                             <constraint firstItem="s0x-Xl-1kw" firstAttribute="bottom" secondItem="oAV-HJ-FQI" secondAttribute="bottom" id="tSo-dN-2Az"/>
+                            <constraint firstItem="Y8J-jE-w7O" firstAttribute="top" secondItem="Hs0-It-ZoA" secondAttribute="bottom" constant="8" symbolic="YES" id="tZQ-jC-VB6"/>
                             <constraint firstItem="OSO-vo-Dp2" firstAttribute="centerX" secondItem="Y8J-jE-w7O" secondAttribute="centerX" id="ubd-gj-5P2"/>
-                            <constraint firstItem="Hs0-It-ZoA" firstAttribute="leading" secondItem="oAV-HJ-FQI" secondAttribute="leading" id="wTP-gl-YwR"/>
+                            <constraint firstItem="Hs0-It-ZoA" firstAttribute="leading" secondItem="8uC-Zi-H4o" secondAttribute="leadingMargin" id="v1V-so-Kmm"/>
+                            <constraint firstItem="Qjp-dG-7Qz" firstAttribute="top" secondItem="oAV-HJ-FQI" secondAttribute="top" id="yLS-Ns-k7K"/>
                             <constraint firstItem="Y8J-jE-w7O" firstAttribute="trailing" secondItem="oAV-HJ-FQI" secondAttribute="trailing" id="zY0-ud-Zk1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oAV-HJ-FQI"/>
@@ -76,6 +89,7 @@
                         <outlet property="activityIndicator" destination="OSO-vo-Dp2" id="ymK-YO-VPH"/>
                         <outlet property="goBackItem" destination="xyd-uC-hnx" id="pBW-nI-jXM"/>
                         <outlet property="goForwardItem" destination="zaP-jB-Nsc" id="p9Q-v2-wfv"/>
+                        <outlet property="textField" destination="Hs0-It-ZoA" id="2Gt-fk-Gyg"/>
                         <outlet property="webView" destination="Y8J-jE-w7O" id="doj-hQ-vHv"/>
                     </connections>
                 </viewController>

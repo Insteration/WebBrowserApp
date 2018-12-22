@@ -16,7 +16,14 @@ class ViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var goBackItem: UIBarButtonItem!
     @IBOutlet weak var goForwardItem: UIBarButtonItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var textField: UITextField!
     
+    @IBAction func goButton(_ sender: UIButton) {
+        let myUrl = URL(string: "https://\(textField.text!)")
+        guard let unwrappedUrlRequest = myUrl else { return }
+        let request = URLRequest(url: unwrappedUrlRequest)
+        webView.loadRequest(request)
+    }
     
     @IBAction func goBackButton(_ sender: UIBarButtonItem) {
         if webView.canGoBack {
@@ -38,14 +45,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         webView.delegate = self
-        
-        let myUrl = URL(string: "https://www.google.com")
-        guard let unwrappedUrlRequest = myUrl else { return }
-        let request = URLRequest(url: unwrappedUrlRequest)
-
-        webView.loadRequest(request)
-        
-        
+        activityIndicator.isHidden = true
     }
 
     func workIndicator(isAnimated: Bool, indicator: UIActivityIndicatorView) {
@@ -75,13 +75,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
-    
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         print("shouldStartLoadWith - \(request)")
         return true
-    }
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        
     }
 }
 
